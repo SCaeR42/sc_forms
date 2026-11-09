@@ -1,0 +1,8 @@
+{
+    "name": "scody/sc-forms",
+    "description": "Standalone PHP forms with modal UI and SMTP delivery",
+    "type": "project",
+    "require": { "php": ">=8.1", "ext-openssl": "*", "phpmailer/phpmailer": "^7.0" },
+    "config": { "platform": { "php": "8.1.0" }, "sort-packages": true },
+    "scripts": { "test": ["@php tests/http.php", "@php tests/smtp.php"] }
+}

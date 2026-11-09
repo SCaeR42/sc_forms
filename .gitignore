@@ -1,0 +1,24 @@
+# Local configuration and secrets
+/config/config.local.php
+/.env
+/.env.*
+!/.env.example
+
+# Runtime data
+/var/*
+!/var/.gitkeep
+*.log
+
+# Installed dependencies (keep composer.json and composer.lock)
+/vendor/
+/node_modules/
+
+# Local editor and OS files
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+Desktop.ini

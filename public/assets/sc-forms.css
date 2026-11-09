@@ -1,0 +1,50 @@
+/* Roboto is bundled locally, including Cyrillic; no external font requests. */
+@font-face {font-family:"SC Forms Roboto"; font-style:normal; font-weight:300; font-display:swap; src:url("fonts/roboto-light.ttf") format("truetype")}
+@font-face {font-family:"SC Forms Roboto"; font-style:normal; font-weight:400; font-display:swap; src:url("fonts/roboto-regular.ttf") format("truetype")}
+@font-face {font-family:"SC Forms Roboto"; font-style:normal; font-weight:700; font-display:swap; src:url("fonts/roboto-bold.ttf") format("truetype")}
+
+.scf-modal {box-sizing:border-box; position:fixed; inset:0; width:100%; max-width:none; height:100%; height:100dvh; max-height:none; margin:0; padding:64px 16px; border:0; border-radius:0; color:#171724; background:transparent; box-shadow:none; overflow:auto; font:300 17px/1.54 "SC Forms Roboto",Roboto,Arial,sans-serif; color-scheme:light}
+.scf-modal[open] {display:flex; flex-direction:column}
+.scf-modal:not([open]) {display:none}
+.scf-modal::backdrop {background:rgba(255,122,32,.95)}
+.scf-panel {box-sizing:border-box; flex-shrink:0; width:100%; max-width:650px; margin:auto; padding:50px 25px; background:#fff}
+.scf-close {position:fixed; top:25px; right:65px; z-index:1; display:block; width:45px; height:45px; padding:0; border:3px solid #000; border-radius:50%; background:transparent; color:#000; font-size:0; cursor:pointer}
+.scf-close::before,.scf-close::after {content:""; position:absolute; top:50%; left:50%; width:28px; height:3px; background:currentColor; transform:translate(-50%,-50%) rotate(45deg)}
+.scf-close::after {transform:translate(-50%,-50%) rotate(-45deg)}
+.scf-close:hover {color:#fff; border-color:currentColor}
+.scf-form,.scf-success {margin:0; color:#000; background:#fff; font:300 17px/1.54 "SC Forms Roboto",Roboto,Arial,sans-serif; text-align:left; color-scheme:light}
+.scf-form *, .scf-success * {box-sizing:border-box}
+.scf-title {margin:0 0 50px; color:#171724; font:300 32px/1.2 "SC Forms Roboto",Roboto,Arial,sans-serif; text-align:center}
+.scf-field {margin:0 0 16px}
+.scf-floating {position:relative}
+.scf-form .scf-control {display:block; width:100%; height:58px; min-height:58px; margin:0; padding:16px 12px; border:1px solid #dee2e6; border-radius:6px; appearance:none; color:#5d5d66; background:#fff; font:400 16px/1.25 "SC Forms Roboto",Roboto,Arial,sans-serif; transition:border-color .15s ease-in-out}
+.scf-form textarea.scf-control {height:150px; min-height:150px; resize:vertical}
+.scf-control::placeholder {color:transparent; opacity:0}
+.scf-floating>label {position:absolute; top:0; left:0; max-width:100%; margin:0; padding:16px 12px; border:1px solid transparent; color:#000; font:300 17px/1.54 "SC Forms Roboto",Roboto,Arial,sans-serif; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; pointer-events:none; transform-origin:0 0; transition:transform .1s ease-in-out}
+.scf-form .scf-control:focus {border-color:#f7c09e; outline:0; box-shadow:none}
+.scf-form .scf-control:focus,.scf-form .scf-control:not(:placeholder-shown) {padding-top:26px; padding-bottom:10px}
+.scf-control:focus~label,.scf-control:not(:placeholder-shown)~label {transform:scale(.85) translateY(-8px) translateX(2.4px)}
+.scf-control:focus~label::after,.scf-control:not(:placeholder-shown)~label::after {position:absolute; inset:16px 6px; z-index:-1; height:1.5em; border-radius:6px; background:#fff; content:""}
+.scf-check {display:flex; align-items:flex-start; gap:4px; margin:0 0 0 5px; color:#000; font:300 16px/1.63625 "SC Forms Roboto",Roboto,Arial,sans-serif; cursor:pointer}
+.scf-check input {appearance:none; flex:0 0 16px; width:16px; height:16px; margin:7px 0 0; padding:0; border:1px solid #dee2e6; border-radius:0; background-color:#fff; background-position:center; background-repeat:no-repeat; background-size:contain; cursor:pointer}
+.scf-check input:checked {border-color:#ef813c; background-color:#ef813c; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3E%3C/svg%3E")}
+.scf-form a {color:#d2691e; text-decoration:none}
+.scf-form a:hover {color:#ab5010; text-decoration:underline}
+.scf-form [aria-invalid=true] {border-color:#b42318}
+.scf-error {display:block; margin-top:4px; color:#b42318; font:400 13px/1.4 "SC Forms Roboto",Roboto,Arial,sans-serif}
+.scf-error:empty,.scf-status:empty {display:none}
+.scf-status {margin:16px 0; color:#9b251d; font-size:16px}
+.scf-policy {margin:0 0 16px; font-size:16px}
+.scf-form .scf-submit {display:block; width:auto; min-height:47px; margin:48px auto 0; padding:11px 28px; border:0; border-radius:6px; color:#fff; background:#f57f25; box-shadow:10px 15px 18px rgba(23,23,36,.15); font:700 17px/1.47 "SC Forms Roboto",Roboto,Arial,sans-serif; cursor:pointer; transition:background-color .15s ease-in-out,box-shadow .15s ease-in-out}
+.scf-form .scf-submit:hover {background:#e96d13; box-shadow:6px 9px 14px rgba(23,23,36,.18)}
+.scf-form .scf-submit:disabled {opacity:.6; cursor:wait}
+.scf-form :focus-visible,.scf-modal button:focus-visible {outline:3px solid #a94e0b; outline-offset:3px}
+.scf-form .scf-control:focus-visible {outline:2px solid #f7c09e; outline-offset:1px}
+.scf-trap {position:absolute!important; left:-10000px!important; width:1px!important; height:1px!important; overflow:hidden!important}
+.scf-success {text-align:center}
+.scf-success h3 {margin:0 0 25px; color:#171724; font:300 32px/1.2 "SC Forms Roboto",Roboto,Arial,sans-serif}
+.scf-success p {margin:0 0 16px}
+@media(max-width:950px) {.scf-modal {padding:0}.scf-panel {min-height:100%; margin:0 auto}.scf-close {top:15px; right:25px}}
+@media(max-width:650px) {.scf-panel {padding:80px 20px 35px}.scf-title {margin-bottom:36px; font-size:28px}.scf-close {right:15px; width:40px; height:40px}.scf-floating>label {font-size:16px}.scf-check {margin-left:0}.scf-form .scf-submit {margin-top:36px}}
+@media(prefers-reduced-motion:reduce) {.scf-floating>label,.scf-form .scf-control,.scf-form .scf-submit {transition:none}}
+@media(forced-colors:active) {.scf-check input {appearance:auto}.scf-check input:checked {background-image:none}}
