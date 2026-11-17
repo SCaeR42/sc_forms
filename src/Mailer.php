@@ -38,6 +38,10 @@ final class Mailer
         $mail->setFrom($settings['from_email'] ?? $original['emailFrom'], $settings['from_name'] ?? $original['nameFrom']);
         $recipients = $settings['to'] ?? $original['emailTo'];
         foreach (is_array($recipients) ? $recipients : [$recipients] as $recipient) { $mail->addAddress($recipient); }
+        $copyRecipient = trim($settings['cc'] ?? '');
+        if ($copyRecipient !== '') {
+            $mail->addCC($copyRecipient);
+        }
         if (isset($data['email']) && filter_var($data['email'], FILTER_VALIDATE_EMAIL)) { $mail->addReplyTo($data['email']); }
         $mail->Subject = $original['subject'];
         $mail->isHTML(true);

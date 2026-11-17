@@ -127,13 +127,16 @@ return [
         'from_email' => 'forms@example.org',
         'from_name' => 'Мой сайт',
         'to' => ['manager@example.org'],
+        'cc' => 'copy@example.org',
     ],
 ];
 ```
 
 `tls` — STARTTLS, обычно порт 587; `ssl` — SMTPS, обычно 465. Проверка сертификатов включена. Пустое шифрование разрешено только для `localhost`, `127.0.0.1`, `::1` в локальных тестах. Email посетителя попадает в Reply-To; From должен быть разрешён вашим SMTP-провайдером. Тема берётся из настроек формы. Если `mail.to` и отправитель равны `null`, используются демонстрационные адреса из `config/forms/*Opt.php`: перед первым рабочим запуском замените их своими адресами. Ссылки `/policy` и `/consent` ведут на страницы текущего сайта; разместите там свои документы или измените ссылки в настройках форм и `src/Forms.php`.
 
-Секрет можно получить: `php -r "echo bin2hex(random_bytes(32));"`. Не храните секрет и пароль в публичных файлах или Git. Закрытый `config.local.php` исключён из Git. Если используете пример конфигурации напрямую, доступны переменные `SC_FORMS_PUBLIC_URL`, `SC_FORMS_SECRET`, `SC_FORMS_STORAGE`, `SC_SMTP_HOST`, `SC_SMTP_PORT`, `SC_SMTP_ENCRYPTION`, `SC_SMTP_AUTH`, `SC_SMTP_USER`, `SC_SMTP_PASSWORD`, `SC_MAIL_FROM`, `SC_MAIL_NAME`, `SC_MAIL_TO`.
+Укажите один адрес в `mail.cc`, чтобы отправлять копию каждого письма со всех форм. Этот адрес виден получателям в поле «Копия» (Cc). Пустое значение или `null` отключает отправку копии.
+
+Секрет можно получить: `php -r "echo bin2hex(random_bytes(32));"`. Не храните секрет и пароль в публичных файлах или Git. Закрытый `config.local.php` исключён из Git. Если используете пример конфигурации напрямую, доступны переменные `SC_FORMS_PUBLIC_URL`, `SC_FORMS_SECRET`, `SC_FORMS_STORAGE`, `SC_SMTP_HOST`, `SC_SMTP_PORT`, `SC_SMTP_ENCRYPTION`, `SC_SMTP_AUTH`, `SC_SMTP_USER`, `SC_SMTP_PASSWORD`, `SC_MAIL_FROM`, `SC_MAIL_NAME`, `SC_MAIL_TO`, `SC_MAIL_CC`.
 
 ## Другой домен и защита
 

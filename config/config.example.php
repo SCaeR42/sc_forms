@@ -22,5 +22,6 @@ return [
         'from_email' => getenv('SC_MAIL_FROM') ?: null,
         'from_name' => getenv('SC_MAIL_NAME') ?: null,
         'to' => getenv('SC_MAIL_TO') ?: null, // String or array of email addresses.
+        'cc' => getenv('SC_MAIL_CC') ?: null, // Optional email address for a copy of each message.
     ],
 ];
